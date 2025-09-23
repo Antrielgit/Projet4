@@ -8,3 +8,12 @@ export class Grille {
     this.colonnes = colonnes;
     this.plateau = Array.from({ length: lignes }, () => Array(colonnes).fill(0));
   }
+
+  afficher(): void {
+    console.log(this.plateau.map(ligne => ligne.join(" ")).join("\n"));
+  }
+
+  getPlateau(): number[][] {
+    return this.plateau;
+  }
+}
