@@ -1,4 +1,5 @@
-import { Partie } from "./partie";
+import { Partie } from "./partie.js";
+
 
 const partie = new Partie();
 

@@ -1,5 +1,6 @@
-import { Grille } from "./grille";
-import { Joueur } from "./joueur";
+import { Grille } from "./grille.js";
+import { Joueur } from "./joueur.js";
+
 
 export class Partie {
   private grille: Grille;
