@@ -1,7 +1,7 @@
 import { Partie } from "./partie.js";
-import * as promptSync from "prompt-sync";
+import pkg from "prompt-sync";
 
-const prompt = promptSync();
+const prompt = pkg();
 const partie = new Partie();
 
 console.log("🎮 Bienvenue dans le Puissance 4 !");
