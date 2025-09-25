@@ -1,19 +1,24 @@
 export class Grille {
-  private lignes: number;
-  private colonnes: number;
   private plateau: number[][];
 
-  constructor(lignes = 6, colonnes = 7) {
-    this.lignes = lignes;
-    this.colonnes = colonnes;
-    this.plateau = Array.from({ length: lignes }, () => Array(colonnes).fill(0));
-  }
-
-  afficher(): void {
-    console.log(this.plateau.map(ligne => ligne.join(" ")).join("\n"));
+  constructor(
+    private lignes: number = 6,
+    private colonnes: number = 7
+  ) {
+    this.plateau = Array.from({ length: lignes }, () =>
+      Array(colonnes).fill(0)
+    );
   }
 
   getPlateau(): number[][] {
     return this.plateau;
+  }
+
+  afficher(): void {
+    console.log("\nPlateau actuel :");
+    for (const ligne of this.plateau) {
+      console.log(ligne.map(c => (c === 0 ? "." : c)).join(" "));
+    }
+    console.log("\n");
   }
 }

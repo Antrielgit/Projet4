@@ -13,6 +13,10 @@ export class Partie {
     this.joueurActuel = this.joueurs[0]!; // "!" = pas undefined
   }
 
+  getGrille(): Grille {
+    return this.grille;
+  }
+
   changerJoueur(): void {
     this.joueurActuel =
       this.joueurActuel.id === 1 ? this.joueurs[1]! : this.joueurs[0]!;
