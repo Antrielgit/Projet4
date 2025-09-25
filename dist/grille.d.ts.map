@@ -1,0 +1,1 @@
+{"version":3,"file":"grille.d.ts","sourceRoot":"","sources":["../src/grille.ts"],"names":[],"mappings":"AAAA,qBAAa,MAAM;IAIf,OAAO,CAAC,MAAM;IACd,OAAO,CAAC,QAAQ;IAJlB,OAAO,CAAC,OAAO,CAAa;gBAGlB,MAAM,GAAE,MAAU,EAClB,QAAQ,GAAE,MAAU;IAO9B,UAAU,IAAI,MAAM,EAAE,EAAE;IAIxB,QAAQ,IAAI,IAAI;CAOjB"}

@@ -19,6 +19,10 @@
   },
   "homepage": "https://github.com/Antrielgit/Projet4#readme",
   "devDependencies": {
+    "@types/prompt-sync": "^4.2.3",
     "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
   }
 }

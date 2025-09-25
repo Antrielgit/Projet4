@@ -33,4 +33,12 @@ export class Partie {
     }
     return false; // colonne pleine
   }
+
+    afficher() {
+    this.grille.afficher();
+  }
+
+  getJoueurActuel() {
+    return this.joueurActuel;
+  }
 }

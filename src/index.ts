@@ -1,16 +1,40 @@
 import { Partie } from "./partie.js";
+import * as promptSync from "prompt-sync";
 
-console.log("🎮 Début de la partie !");
-
+const prompt = promptSync();
 const partie = new Partie();
 
-partie.getGrille().afficher();
+console.log("🎮 Bienvenue dans le Puissance 4 !");
+let tour = 0;
+let partieEnCours = true;
 
-partie.jouer(3); // Joueur 1 joue dans la colonne 3
-partie.getGrille().afficher();
+while (partieEnCours) {
+  console.log(`\n➡️  Tour ${tour + 1}`);
+  partie.afficher();
 
-partie.changerJoueur();
-partie.jouer(3); // Joueur 2 joue dans la colonne 3
-partie.getGrille().afficher();
+  const colonne = parseInt(prompt(`Joueur ${partie.getJoueurActuel().id} (${partie.getJoueurActuel().symbole}), choisis une colonne (0-6) : `));
 
-console.log("✅ Tests terminés !");
+  if (isNaN(colonne) || colonne < 0 || colonne > 6) {
+    console.log("❌ Colonne invalide, réessaie.");
+    continue;
+  }
+
+  const joue = partie.jouer(colonne);
+
+  if (!joue) {
+    console.log("⚠️ Colonne pleine, choisis-en une autre !");
+    continue;
+  }
+
+  // TODO : ici tu pourras ajouter une fonction de détection de victoire plus tard
+  // if (partie.verifierVictoire()) { ... }
+
+  partie.changerJoueur();
+  tour++;
+
+  if (tour > 41) { // 42 cases = grille pleine
+    console.log("🤝 Match nul !");
+    partie.afficher();
+    partieEnCours = false;
+  }
+}
