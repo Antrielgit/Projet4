@@ -1,4 +1,4 @@
-import { Partie } from "./Partie";
+import { Partie } from "./partie";
 
 const partie = new Partie();
 partie.jouer(3);
