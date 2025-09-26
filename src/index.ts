@@ -21,6 +21,14 @@ while (partieEnCours) {
 
   const joue = partie.jouer(colonne);
 
+  if (partie.verifierVictoire()) {
+  partie.afficher();
+  console.log(`🎉 Joueur ${partie.getJoueurActuel().id} (${partie.getJoueurActuel().symbole}) gagne !`);
+  partieEnCours = false;
+  break;
+}
+
+
   if (!joue) {
     console.log("⚠️ Colonne pleine, choisis-en une autre !");
     continue;
