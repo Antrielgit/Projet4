@@ -41,4 +41,50 @@ export class Partie {
   getJoueurActuel() {
     return this.joueurActuel;
   }
+
+  verifierVictoire(): boolean {
+  const plateau = this.grille.getPlateau();
+  const lignes = plateau.length;
+  const colonnes = plateau[0]!.length; // <-- ajoute !
+  const joueur = this.joueurActuel.id;
+
+  // Vérifie 4 en ligne dans toutes les directions
+  const directions = [
+    { dx: 1, dy: 0 },  // horizontal →
+    { dx: 0, dy: 1 },  // vertical ↓
+    { dx: 1, dy: 1 },  // diagonale ↘
+    { dx: 1, dy: -1 }  // diagonale ↗
+  ];
+
+  for (let y = 0; y < lignes; y++) {
+    for (let x = 0; x < colonnes; x++) {
+      if (plateau[y]![x] !== joueur) continue;
+
+      for (const { dx, dy } of directions) {
+        let compteur = 1;
+
+        for (let k = 1; k < 4; k++) {
+          const nx = x + dx * k;
+          const ny = y + dy * k;
+
+          if (
+            nx >= 0 &&
+            nx < colonnes &&
+            ny >= 0 &&
+            ny < lignes &&
+            plateau[ny]![nx] === joueur
+          ) {
+            compteur++;
+          } else {
+            break;
+          }
+        }
+
+        if (compteur >= 4) return true;
+      }
+    }
+  }
+
+  return false;
+}
 }
