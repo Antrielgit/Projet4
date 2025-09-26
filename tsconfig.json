@@ -1,13 +1,11 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
-  "compilerOptions": {
+    "compilerOptions": {
     // File Layout
     // "rootDir": "./src",
     "outDir": "./dist",
     "esModuleInterop": true,
-  "allowSyntheticDefaultImports": true,
-
-
+    "allowSyntheticDefaultImports": true,
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
