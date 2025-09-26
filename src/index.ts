@@ -34,9 +34,6 @@ while (partieEnCours) {
     continue;
   }
 
-  // TODO : ici tu pourras ajouter une fonction de détection de victoire plus tard
-  // if (partie.verifierVictoire()) { ... }
-
   partie.changerJoueur();
   tour++;
 
